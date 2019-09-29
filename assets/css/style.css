@@ -8,7 +8,9 @@ body{
 }
 .control-width{
     margin:auto;
-    max-width:960px;    
+    width: 70%;
+    max-width:1200px;
+        
 }
 .header-section{
     background-color:#ffffff;
@@ -17,10 +19,11 @@ body{
 }
 .header{
     display:flex;        
-    height: 60px;
+    min-height: 60px;
     justify-content: space-between;    
 }
 .name{
+    justify-self:flex-start;
     font-size: 20px;    
     background-color:#4aaaa5;
     color: #ffffff;
@@ -30,8 +33,10 @@ body{
 }
 ul{
     list-style-type: none;
+    padding-inline-start: 0;
 }
 #menu{     
+    justify-self:flex-end;
     display: flex;
     margin:0;
     align-items:flex-end;
@@ -66,14 +71,13 @@ ul{
     margin-top:20px;
     border: 1px solid #dddddd;
     margin-bottom:15px;
+    padding-bottom:40px;
 }
 p{
     padding: 5px;
     line-height:1.5;
 }
-img{
-    padding-right: 5px;
-}
+
 hr{
     background-color: darkgrey;
     color: darkgrey;
@@ -96,8 +100,9 @@ h2{
     
 }
 .profile-pic{
-    width: 150px;   
+    width: 200px;   
     margin-right: 10px;
+    margin-top: 10px;
 }
 .right{
     float: right;
@@ -118,7 +123,7 @@ input{
     padding: 5px 0 5px 5px;
 }
 #messageBox{
-    height: 150px;
+    height: 100px;
     width: 100%;
     padding: 5px 0 5px 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -146,31 +151,35 @@ input[type=submit]:hover{
 #portfolio-items{
     display:flex;
     flex-wrap: wrap;
+    justify-content: center;
+    
 }
-
+.portfolio-item-wrapper{
+    position: relative;
+    display:flex;
+    margin: 0 25px 40px 25px;  
+}
 .portfolio-image{
     display: flex;    
     justify-items: center;
     border: 2px solid #666666;
-    display: flex;
-    width: 266.6667px;
-    height: 200px;
-    background-color: grey;
-    margin: 0 25px 40px 0;
-    box-shadow: -2px -2px 2px 2px rgb(162,162,162,0.3);
-    
+    max-width: 266.6667px;
+    height: auto;     
+    box-shadow: -2px -2px 2px 2px rgb(162,162,162,0.3);    
 }
+
 .portfolio-image:hover{
-    border: 2px solid #4882B8;
-   
+    border: 2px solid #4882B8;   
 }
 
 .portfolio-name{
     text-decoration: none;
-    align-self: flex-end;
+    align-self:flex-end;
     text-align: center;
+    position: absolute;
     white-space: nowrap;
     width: 100%;
+    bottom:10%;
     color: #ffffff;
     padding: 15px 0;
     margin-bottom: 15px;
@@ -181,21 +190,38 @@ input[type=submit]:hover{
     font-size: 20px;
     max-width: unset;    
 }
-#portfolio-item1{
-    background-image: url("../images/portfolio1.jfif");
+
+
+/*Media Queries*/
+@media only screen and (max-width: 980px){
+    .control-width{
+        width: 75%;    
+    }
+}
+@media only screen and (max-width: 786px){
+    .control-width{
+        width: 85%;    
+    }  
+}
+@media only screen and (max-width: 640px){
+    .header{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+    .profile-pic{
+        float:unset;
+        text-align:center;
+        
+    }
+    .center{
+        text-align:center;
+    }
+    .name{
+        width:100%;
+        text-align: center;
+    }
+    .control-width{
+        width:95%;
+    }
 }
 
-#portfolio-item2{
-    background-image: url("../images/portfolio2.jfif");
-}
-
-#portfolio-item3{
-    background-image: url("../images/portfolio3.jfif");
-}
-
-#portfolio-item4{
-    background-image: url("../images/portfolio4.jfif");
-}
-#portfolio-item5{
-    background-image: url("../images/portfolio5.jfif");
-}
